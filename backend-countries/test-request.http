@@ -1,0 +1,82 @@
+### CREATE five documents.
+
+### CREATE 1
+POST http://localhost:3000/countries HTTP/1.1
+content-type: application/json
+
+{
+    "name": "United States",
+    "population": 331000000,
+    "independenceDate": "1776-07-04",
+    "presidentName": "Joe Biden"
+}
+
+### CREATE 2
+POST http://localhost:3000/countries HTTP/1.1
+content-type: application/json
+
+{
+    "name": "France",
+    "population": 65200000,
+    "independenceDate": "843-01-01",
+    "presidentName": "Emmanuel Macron"
+}
+
+### CREATE 3
+POST http://localhost:3000/countries HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Japan",
+    "population": 126000000,
+    "independenceDate": "660-02-11",
+    "presidentName": "Fumio Kishida"
+}
+
+### CREATE 4
+POST http://localhost:3000/countries HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Brazil",
+    "population": 213000000,
+    "independenceDate": "1822-09-07",
+    "presidentName": "Luiz Inácio Lula da Silva"
+}
+
+### CREATE 5
+POST http://localhost:3000/countries HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Australia",
+    "population": 25600000,
+    "independenceDate": "1901-01-01",
+    "presidentName": "Anthony Albanese"
+}
+
+### RETRIEVE all documents.
+GET http://localhost:3000/countries HTTP/1.1
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/countries/66b3b20b7ced68bcc45b7d5e HTTP/1.1
+
+### UPDATE one document's details by ID.
+### Replace the ID in the following request with one that exists
+### and update the details:
+PUT http://localhost:3000/countries/66b3b20b7ced68bcc45b7d5e HTTP/1.1
+content-type: application/json
+
+{
+    "name": "United States of America",
+    "population": 331500000,
+    "independenceDate": "1776-07-04",
+    "presidentName": "Joe Biden"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/countries/66b3b20b7ced68bcc45b7d5e HTTP/1.1
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/countries HTTP/1.1
