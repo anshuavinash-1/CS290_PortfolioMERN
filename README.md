@@ -1,64 +1,65 @@
-A personal portfolio website built with a React (Vite) frontend and a Node.js / Express backend.
-Features a REST API backed by MongoDB for dynamic content (countries, user input), and reusable UI components (Gallery, Contact, User List, Country CRUD).
+Personal Portfolio Project Website (Web Development)
+
+A personal portfolio website built with React (Vite) for the frontend and Node.js / Express for the backend.Features a REST API backed by MongoDB for dynamic content (example countries, user input), with reusable UI components (Gallery, Contact, User List, Country CRUD).
 
 Features:
-- Personal portfolio with homepage, about, projects, and contact sections
-- Full CRUD for Countries (example dataset) via REST API
-- Contact form that submits messages to backend (and optionally stores in DB / sends email)
-- Reusable React components: Gallery, Contact, UserList, CountryCRUD
-- Responsive layout and simple, accessible design
-- Easy to extend: add new project cards, blog posts, or CV entries via the API
+* Personal portfolio with homepage, about, projects, and contact sections
+* Full CRUD for countries via REST API
+* Contact form that submits messages to backend (can be stored in DB or emailed)
+* Reusable React components: Gallery, Contact, UserList, CountryCRUD
+* Responsive and accessible design
+* Easy to extend: add new project cards, blog posts, or CV entries via the API
 
-Tools used: 
-Frontend: React (Vite), React Router, React Hooks, CSS (or Tailwind / SCSS if used)
+Tools and technologies
+Frontend: React (Vite), React Router, React Hooks, CSS / Tailwind / SCSS
 Backend: Node.js, Express
 Database: MongoDB (Atlas or local)
 
-## 📂 Project Structure
+Project Structure
 
 a8-avinasha-portfolio/
-├── backend-countries/         # Backend (Node.js + Express + MongoDB API)
+├── backend-countries/         
 │   ├── country-controller.mjs # Controller logic for country routes
 │   ├── country-model.mjs      # Mongoose schema/model for countries
-│   ├── test-request.http      # Sample HTTP requests for testing API
+│   ├── test-request.http      # Sample API requests
 │   ├── package.json           # Backend dependencies & scripts
 │   └── package-lock.json
 │
-├── frontend/                  # Frontend (React + Vite)
-│   ├── avinasha-a8-screenshot.png # Project screenshot
-│   ├── eslint.config.js       # ESLint configuration
-│   ├── index.html             # Entry HTML file
-│   ├── package.json           # Frontend dependencies & scripts
-│   ├── package-lock.json
-│   ├── vite.config.js         # Vite configuration
-│   ├── public/                # Static assets
-│   └── src/                   # React source code (components, pages, etc.)
+├── frontend/                  
+│   ├── index.html             
+│   ├── package.json           
+│   ├── vite.config.js         
+│   ├── public/                
+│   └── src/                   # React components, pages, assets
 │
-├── README.md                  # Project documentation
-└── package.json               # Root config (if used for combined setup)
+├── README.md                  
+└── package.json               # Optional root config
 
+Getting Started!!
+1. Clone the Repository
+    git clone https://github.com/yourusername/a8-avinasha-portfolio.git
+    cd a8-avinasha-portfolio
+    
+2. Backend Setup
+    cd backend-countries
+    npm install          # Install backend dependencies
 
-## 🚀 How to Run the Project
+    Create a .env file in backend-countries
+        PORT=3000
+        MONGODB_CONNECT_STRING=mongodb://127.0.0.1:27017/countriesDB
+        # Or use MongoDB Atlas connection string
+    Start the backend server: npm run dev
 
-** 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/a8-avinasha-portfolio.git
-cd a8-avinasha-portfolio
+3. Frontend Setup 
+    cd ../frontend
+    npm install          # Install frontend dependencies
+    npm run dev          # Start Vite dev server
 
-** 2. Run Backend 
+  ⚠️ Note: Vite requires Node.js 20.19+ or 22.12+. Upgrade Node.js if needed.
+  
+4. Notes
+    The frontend fetches data from the backend automatically for components like CountryCRUD and UserList.
+    Use npm run dev -- --host in frontend to expose the site to your local network.
+    MongoDB can be local or Atlas; make sure the connection string is valid.
 
-cd backend-countries
-npm install
-npm run dev
-
-Backend will start at http://localhost:5000 (By default)
-Make sure you have MongoDB running locally or provide a connection string in .env (see Environment Variables section).
-
-*** 3. Run the Frontend
-cd frontend
-npm install
-npm run dev
-
-Frontend will start at http://localhost:5173 (By default)
-It fetches data from the backend API (base URL configurable via .env).
 
